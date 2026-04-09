@@ -9,23 +9,14 @@ defineProps<{
 <template>
   <div
     data-testid="skill-card"
-    class="bg-bg-card rounded-card p-6 shadow-lg transition-transform hover:scale-105"
+    class="h-[160px] w-[280px] rounded-[12px] bg-white p-[24px]"
   >
-    <div class="mb-4 text-4xl">{{ skill.icon }}</div>
-    <h3 class="mb-2 text-xl font-semibold text-text-primary">
+    <div class="text-[32px]">{{ skill.icon }}</div>
+    <h3 class="mt-[14px] text-[20px] font-bold text-text-heading">
       {{ skill.title }}
     </h3>
-    <p class="mb-4 text-sm text-text-secondary">
+    <p class="mt-[6px] text-[14px] text-text-muted">
       {{ skill.description }}
     </p>
-    <div class="flex flex-wrap gap-2">
-      <span
-        v-for="tag in skill.tags"
-        :key="tag"
-        class="rounded-full bg-primary/10 px-3 py-1 text-xs text-primary"
-      >
-        {{ tag }}
-      </span>
-    </div>
   </div>
 </template>

@@ -9,32 +9,21 @@ defineProps<{
 <template>
   <div
     data-testid="project-card"
-    class="bg-bg-card rounded-card overflow-hidden shadow-lg transition-transform hover:scale-105"
+    class="w-[400px] overflow-hidden rounded-[12px] bg-bg-light"
   >
-    <div class="p-6">
-      <h3 class="mb-2 text-xl font-semibold text-text-primary">
+    <!-- 圖片佔位 -->
+    <div class="h-[200px] w-[400px] bg-bg-project-img" />
+    <!-- 內容 -->
+    <div class="px-[24px]">
+      <h3 class="mt-[20px] text-[22px] font-bold text-text-heading">
         {{ project.title }}
       </h3>
-      <p class="mb-4 text-sm text-text-secondary">
+      <p class="mt-[11px] w-[360px] text-[14px] text-text-muted">
         {{ project.description }}
       </p>
-      <div class="mb-4 flex flex-wrap gap-2">
-        <span
-          v-for="tag in project.tags"
-          :key="tag"
-          class="rounded-full bg-primary/10 px-3 py-1 text-xs text-primary"
-        >
-          {{ tag }}
-        </span>
-      </div>
-      <a
-        :href="project.link"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center text-sm text-primary hover:underline"
-      >
-        查看專案 &rarr;
-      </a>
+      <p class="mt-[51px] text-[12px] text-primary">
+        {{ project.tags }}
+      </p>
     </div>
   </div>
 </template>

@@ -11,12 +11,9 @@ describe('skills 資料', () => {
       expect(skill).toHaveProperty('icon')
       expect(skill).toHaveProperty('title')
       expect(skill).toHaveProperty('description')
-      expect(skill).toHaveProperty('tags')
       expect(typeof skill.icon).toBe('string')
       expect(typeof skill.title).toBe('string')
       expect(typeof skill.description).toBe('string')
-      expect(Array.isArray(skill.tags)).toBe(true)
-      expect(skill.tags.length).toBeGreaterThan(0)
     })
   })
 
@@ -29,7 +26,6 @@ describe('skills 資料', () => {
   })
 
   it('skills 陣列應為 readonly', () => {
-    // 確認是陣列且有內容，不可為空
     expect(skills).toBeDefined()
     expect(skills.length).toBeGreaterThan(0)
   })

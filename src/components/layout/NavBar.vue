@@ -29,9 +29,9 @@ function handleNavClick(target: string): void {
 </script>
 
 <template>
-  <nav class="fixed top-0 z-50 w-full bg-bg-dark/90 backdrop-blur">
-    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-      <span class="text-2xl font-bold text-text-primary">YC.</span>
+  <nav class="fixed top-0 z-50 w-full bg-bg-dark">
+    <div class="mx-auto flex h-[72px] max-w-[1440px] items-center justify-between px-[80px]">
+      <span class="text-[24px] font-bold text-white">YC.</span>
 
       <!-- 桌面版導覽 -->
       <div class="hidden lg:flex lg:items-center lg:gap-8">
@@ -39,7 +39,7 @@ function handleNavClick(target: string): void {
           v-for="link in navLinks"
           :key="link.target"
           data-testid="nav-link"
-          class="text-sm text-text-secondary transition hover:text-primary"
+          class="text-[16px] font-normal text-text-nav transition hover:text-primary"
           @click="handleNavClick(link.target)"
         >
           {{ link.label }}
@@ -49,7 +49,7 @@ function handleNavClick(target: string): void {
       <!-- 漢堡選單按鈕 -->
       <button
         data-testid="menu-toggle"
-        class="text-text-primary lg:hidden"
+        class="text-white lg:hidden"
         @click="toggleMenu"
       >
         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -67,13 +67,13 @@ function handleNavClick(target: string): void {
     <div
       v-show="isMenuOpen"
       data-testid="mobile-menu"
-      class="border-t border-text-secondary/10 bg-bg-dark px-6 pb-4 lg:hidden"
+      class="border-t border-text-nav/10 bg-bg-dark px-[80px] pb-4 lg:hidden"
     >
       <button
         v-for="link in navLinks"
         :key="link.target"
         data-testid="nav-link"
-        class="block w-full py-3 text-left text-sm text-text-secondary transition hover:text-primary"
+        class="block w-full py-3 text-left text-[16px] text-text-nav transition hover:text-primary"
         @click="handleNavClick(link.target)"
       >
         {{ link.label }}

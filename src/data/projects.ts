@@ -1,30 +1,26 @@
 export interface Project {
   readonly title: string
   readonly description: string
-  readonly tags: readonly string[]
-  readonly link: string
+  readonly tags: string
 }
 
 export const projects: readonly Project[] = [
   {
-    title: 'Spring Boot 微服務實戰課程',
+    title: 'Spring Boot 後端實戰課程',
     description:
-      '從零開始建構 Spring Boot RESTful API，涵蓋安全認證、資料庫整合與容器化部署',
-    tags: ['Java', 'Spring Boot', 'Docker', 'REST API'],
-    link: 'https://github.com/yanchen184',
+      '從零到一的 Spring Boot 後端開發課程，涵蓋 JPA、Redis、RabbitMQ 等實戰技術。',
+    tags: 'Spring Boot · JPA · Redis',
   },
   {
-    title: 'React 前端開發工作坊',
+    title: 'React + TypeScript 前端課程',
     description:
-      '以 React + TypeScript 實作現代化前端應用，包含狀態管理、路由與效能優化',
-    tags: ['React', 'TypeScript', 'Vite', 'Tailwind CSS'],
-    link: 'https://github.com/yanchen184',
+      '現代前端開發實戰，掌握 React 生態系與 TypeScript 型別安全開發。',
+    tags: 'React · TypeScript · Tailwind',
   },
   {
-    title: 'AI 應用開發工作坊',
+    title: 'AI 輔助開發工作坊',
     description:
-      '結合 OpenAI API 與 LangChain 打造智慧助手，實現 RAG 與 Agent 應用',
-    tags: ['Python', 'OpenAI', 'LangChain', 'RAG'],
-    link: 'https://github.com/yanchen184',
+      '學習如何運用 AI 工具加速開發流程，包含 Claude Code、Cursor 等實戰應用。',
+    tags: 'Claude AI · Cursor · GitHub Copilot',
   },
 ] as const

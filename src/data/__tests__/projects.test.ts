@@ -11,11 +11,9 @@ describe('projects 資料', () => {
       expect(project).toHaveProperty('title')
       expect(project).toHaveProperty('description')
       expect(project).toHaveProperty('tags')
-      expect(project).toHaveProperty('link')
       expect(typeof project.title).toBe('string')
       expect(typeof project.description).toBe('string')
-      expect(Array.isArray(project.tags)).toBe(true)
-      expect(typeof project.link).toBe('string')
+      expect(typeof project.tags).toBe('string')
     })
   })
 
@@ -26,7 +24,7 @@ describe('projects 資料', () => {
     expect(titles.some((t) => t.includes('AI'))).toBe(true)
   })
 
-  it('每筆專案至少有一個 tag', () => {
+  it('每筆專案都有 tags 字串', () => {
     projects.forEach((project) => {
       expect(project.tags.length).toBeGreaterThan(0)
     })

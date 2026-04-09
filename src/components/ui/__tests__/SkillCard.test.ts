@@ -4,10 +4,9 @@ import SkillCard from '../SkillCard.vue'
 import type { Skill } from '@/data/skills'
 
 const mockSkill: Skill = {
-  icon: '💻',
+  icon: '🎨',
   title: '前端開發',
-  description: '使用 React、Vue 建構現代化應用',
-  tags: ['React', 'Vue', 'TypeScript'],
+  description: 'React · TypeScript · Tailwind CSS',
 }
 
 describe('SkillCard', () => {
@@ -22,32 +21,23 @@ describe('SkillCard', () => {
     const wrapper = mount(SkillCard, {
       props: { skill: mockSkill },
     })
-    expect(wrapper.text()).toContain('使用 React、Vue 建構現代化應用')
+    expect(wrapper.text()).toContain('React · TypeScript · Tailwind CSS')
   })
 
   it('應渲染技能 icon', () => {
     const wrapper = mount(SkillCard, {
       props: { skill: mockSkill },
     })
-    expect(wrapper.text()).toContain('💻')
+    expect(wrapper.text()).toContain('🎨')
   })
 
-  it('應渲染所有 tags', () => {
-    const wrapper = mount(SkillCard, {
-      props: { skill: mockSkill },
-    })
-    mockSkill.tags.forEach((tag) => {
-      expect(wrapper.text()).toContain(tag)
-    })
-  })
-
-  it('應使用卡片樣式（bg-bg-card + 圓角）', () => {
+  it('應使用白色背景與 12px 圓角', () => {
     const wrapper = mount(SkillCard, {
       props: { skill: mockSkill },
     })
     const card = wrapper.find('[data-testid="skill-card"]')
     expect(card.exists()).toBe(true)
-    expect(card.classes()).toContain('bg-bg-card')
-    expect(card.classes()).toContain('rounded-card')
+    expect(card.classes()).toContain('bg-white')
+    expect(card.classes()).toContain('rounded-[12px]')
   })
 })

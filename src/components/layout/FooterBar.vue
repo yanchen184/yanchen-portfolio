@@ -2,9 +2,11 @@
 </script>
 
 <template>
-  <footer class="bg-[#0A0A14] px-6 py-8">
-    <p class="text-center text-sm text-text-secondary">
-      © 2026 陳彥彤 All Rights Reserved.
-    </p>
+  <footer class="h-[80px] bg-bg-footer">
+    <div class="mx-auto flex h-full max-w-[1440px] items-center justify-center">
+      <p class="text-[14px] text-text-muted">
+        © 2026 陳彥彤 All Rights Reserved.
+      </p>
+    </div>
   </footer>
 </template>

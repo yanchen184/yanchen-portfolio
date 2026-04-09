@@ -11,7 +11,7 @@ describe('contact 資料', () => {
   })
 
   it('應包含正確的 location', () => {
-    expect(contactInfo.location).toBe('台北市')
+    expect(contactInfo.location).toBe('台北市，台灣')
   })
 
   it('應包含 socials 陣列且至少 2 筆', () => {
@@ -19,14 +19,12 @@ describe('contact 資料', () => {
     expect(contactInfo.socials.length).toBeGreaterThanOrEqual(2)
   })
 
-  it('每個 social 都有 name、url、icon', () => {
+  it('每個 social 都有 name、url', () => {
     contactInfo.socials.forEach((social: Social) => {
       expect(social).toHaveProperty('name')
       expect(social).toHaveProperty('url')
-      expect(social).toHaveProperty('icon')
       expect(typeof social.name).toBe('string')
       expect(typeof social.url).toBe('string')
-      expect(typeof social.icon).toBe('string')
     })
   })
 

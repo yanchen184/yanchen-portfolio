@@ -26,7 +26,7 @@ describe('ContactSection', () => {
   it('應渲染聯絡資訊', () => {
     const wrapper = mount(ContactSection)
     expect(wrapper.text()).toContain('bobchen184@gmail.com')
-    expect(wrapper.text()).toContain('台北市')
+    expect(wrapper.text()).toContain('台北市，台灣')
   })
 
   it('應渲染社群連結', () => {

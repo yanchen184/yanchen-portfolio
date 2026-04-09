@@ -25,4 +25,18 @@ describe('SectionTitle', () => {
     expect(underline.exists()).toBe(true)
     expect(underline.classes()).toContain('bg-primary')
   })
+
+  it('預設使用深色標題', () => {
+    const wrapper = mount(SectionTitle, {
+      props: { title: '關於我' },
+    })
+    expect(wrapper.find('h2').classes()).toContain('text-text-heading')
+  })
+
+  it('light 模式使用白色標題', () => {
+    const wrapper = mount(SectionTitle, {
+      props: { title: '聯絡我', light: true },
+    })
+    expect(wrapper.find('h2').classes()).toContain('text-white')
+  })
 })
